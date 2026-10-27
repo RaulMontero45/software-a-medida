@@ -2,105 +2,390 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#020609">
-<meta name="description" content="Apoyo académico en informática, programación, documentación y proyectos. Consultas individuales y plan mensual en Costa Rica.">
-<title>Academic Aid | Apoyo académico</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#071c58">
+<title>Academic Aid</title>
 <style>
-:root{--bg:#020609;--ink:#e7fdff;--blue:#49f4ff;--sub:#97d2d8;--line:#12363d;--green:#25d366}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);margin:0;font-family:Consolas,'Lucida Console','Liberation Mono',monospace;line-height:1.55;position:relative;overflow-x:hidden}
-/* Two independent animated layers: visible moving cyan light and a slowly scrolling grid. */
-body::before{content:"";position:fixed;inset:-20%;pointer-events:none;z-index:0;
- background:
- radial-gradient(ellipse 32% 27% at 12% 20%,rgba(0,239,255,.27),transparent 75%),
- radial-gradient(ellipse 27% 34% at 85% 75%,rgba(0,150,210,.23),transparent 75%),
- radial-gradient(ellipse 23% 22% at 55% 35%,rgba(0,255,209,.14),transparent 75%);
- animation:cyan-light-travel 13s ease-in-out infinite alternate;
- will-change:transform;
+:root{--navy:#071c58;--cyan:#00eff2;--muted:#cad9ef;--wa:#25D366}
+body{margin:0;min-height:100vh;background:#071c58;color:#fff;font-family:Arial,Helvetica,sans-serif;line-height:1.45;overflow-x:hidden;position:relative}
+body::before,body::after{content:"";position:fixed;inset:-12%;pointer-events:none;z-index:-1}
+body::before{
+  opacity:.34;
+  background:
+    linear-gradient(90deg,transparent 0 12%,rgba(0,239,242,.14) 12% 12.15%,transparent 12.15% 33%,rgba(43,115,210,.16) 33% 33.15%,transparent 33.15% 68%,rgba(0,239,242,.10) 68% 68.15%,transparent 68.15%),
+    linear-gradient(0deg,transparent 0 19%,rgba(43,115,210,.13) 19% 19.15%,transparent 19.15% 47%,rgba(0,239,242,.12) 47% 47.15%,transparent 47.15% 76%,rgba(43,115,210,.14) 76% 76.15%,transparent 76.15%);
+  background-size:360px 300px;
+  transform:rotate(-8deg) scale(1.15);
 }
-body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
- background-image:linear-gradient(rgba(53,237,242,.075) 1px,transparent 1px),linear-gradient(90deg,rgba(53,237,242,.075) 1px,transparent 1px);
- background-size:34px 34px;
- animation:grid-scroll 9s linear infinite;
+body::after{
+  opacity:.42;
+  background:
+    radial-gradient(circle at 15% 30%,rgba(0,239,242,.45) 0 2px,transparent 3px),
+    radial-gradient(circle at 70% 65%,rgba(56,132,255,.42) 0 2px,transparent 3px),
+    linear-gradient(115deg,transparent 0 47%,rgba(0,239,242,.0) 47%,rgba(0,239,242,.28) 49%,rgba(43,115,210,.0) 51%,transparent 53%);
+  background-size:150px 150px,190px 190px,520px 520px;
+  animation:electricDrift 10s linear infinite;
 }
-@keyframes cyan-light-travel{
- 0%{transform:translate3d(-13%,-9%,0) rotate(-6deg)}
- 50%{transform:translate3d(11%,8%,0) rotate(5deg)}
- 100%{transform:translate3d(-2%,15%,0) rotate(-3deg)}
+@keyframes electricDrift{
+  from{background-position:0 0,0 0,-520px 0}
+  to{background-position:150px 150px,-190px 190px,520px 0}
 }
-@keyframes grid-scroll{to{background-position:34px 34px}}
-@media(prefers-reduced-motion:reduce){body::before,body::after{animation:none}}
-.page{width:min(900px,calc(100% - 40px));margin:auto;padding:32px 0 60px;position:relative;z-index:1}
-.lang{display:flex;justify-content:flex-end;gap:8px;margin-bottom:55px}
-.lang button{font:inherit;font-size:12px;padding:5px 8px;background:transparent;color:var(--sub);border:1px solid transparent;cursor:pointer}
-.lang button.on{color:var(--blue);border-color:var(--line)}
-.hero{text-align:center;max-width:740px;margin:0 auto 58px}
-h1{font-size:clamp(2.35rem,6vw,4rem);line-height:1.13;letter-spacing:-.055em;color:var(--blue);margin:0 0 21px;font-weight:700}
-.intro{max-width:600px;margin:0 auto;color:var(--ink);font-size:clamp(.9rem,1.8vw,1.04rem)}
-.offer{margin:29px auto 0;max-width:540px;padding:17px 12px 19px}
-.offer .price{color:var(--blue);font-size:clamp(1.7rem,4vw,2.5rem);font-weight:700;line-height:1.25}
-.offer .price span{font-size:.5em;color:var(--sub);font-weight:400}
-.offer p{max-width:600px;margin:10px auto 0;color:var(--ink);font-size:clamp(.9rem,1.8vw,1.04rem)}
-.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;margin-top:25px;padding:12px 19px;border-radius:3px;background:var(--green);color:#06180d;font:700 15px Consolas,'Lucida Console',monospace;text-decoration:none}
-.button:hover{filter:brightness(1.09)}
-h2{font-size:17px;letter-spacing:.015em;margin:0 0 16px;color:var(--blue);font-weight:700}
-.carousel{position:relative;min-height:310px;border:0;overflow:hidden;background:rgba(4,16,21,.86);box-shadow:inset 0 0 0 1px rgba(73,244,255,.08)}
-.slide{position:absolute;inset:0;padding:45px 62px 55px;display:flex;justify-content:flex-end;flex-direction:column;visibility:hidden;opacity:0;transition:opacity .3s ease}
-.slide.active{visibility:visible;opacity:1}
-.slide::before{content:attr(data-emoji);position:absolute;right:8%;top:50%;transform:translateY(-50%);font-family:"Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",sans-serif;font-size:clamp(115px,22vw,225px);line-height:1;opacity:.55;pointer-events:none;filter:saturate(.85)}
-.slide>*{position:relative;z-index:1}
-.slide small{font-size:14px;color:#abdfe4;max-width:560px}
-.slide strong{font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.12;letter-spacing:-.04em;color:#f2ffff;margin-top:9px}
-.nav{position:absolute;top:50%;transform:translateY(-50%);font:28px Consolas,monospace;background:transparent;border:0;color:var(--blue);padding:7px 12px;cursor:pointer;z-index:3}
-.prev{left:5px}.next{right:5px}
-.count{position:absolute;right:19px;bottom:15px;color:var(--sub);font-size:12px;z-index:3}
-.questions{margin-top:48px}
-details{border:0;margin-bottom:5px}details:last-child{border:0}
-summary{padding:18px 28px 18px 0;font-size:15px;font-weight:700;cursor:pointer;color:var(--ink)}
-.answer{padding:0 12px 19px 0;font-size:13px;color:var(--sub)}.answer p{margin:0 0 9px}.answer strong{color:var(--ink)}
-a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
-@media(max-width:620px){.slide::before{right:3%;font-size:120px;opacity:.30}.page{width:calc(100% - 34px);padding-top:17px}.lang{margin-bottom:50px}.hero{margin-bottom:46px}h1{letter-spacing:-.06em}.offer{margin-top:25px}.button{width:100%}.carousel{min-height:320px}.slide{padding:45px 43px 52px}.slide small{font-size:13px}.nav{padding:5px}.questions{margin-top:40px}}
-@media(prefers-reduced-motion:reduce){.slide{transition:none}}
+.page{width:min(100% - 30px,900px);margin:auto;padding:48px 0 64px}
+.hero{text-align:center;margin-bottom:44px}
+h1{margin:0 auto;max-width:760px;font-size:clamp(2.35rem,7vw,4.3rem);line-height:1.02;color:var(--cyan);font-weight:900}
+.intro{max-width:650px;margin:18px auto 22px;font-size:18px;color:#fff}
+.button{margin-top:24px;display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 21px;background:var(--wa);color:#fff !important;text-decoration:none;font-weight:400;border-radius:4px;text-shadow:0 1px 2px rgba(0,0,0,.18)}
+.wa-icon{width:22px;height:22px;color:#fff}
+.small{font-size:13px;color:#fff;margin:16px 0 0}
+.label{margin:0 0 13px;color:var(--cyan);font-size:19px;text-transform:uppercase;letter-spacing:.03em}
+
+.carousel{position:relative;overflow:hidden;border:1px solid rgba(0,239,242,.4);min-height:300px;background:#061a49}
+.service-slide{
+  display:flex;
+  align-items:flex-end;
+  position:absolute;
+  inset:0;
+  min-height:300px;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .85s ease,visibility .85s ease;
+}
+.service-slide.active{opacity:1;visibility:visible;z-index:2}
+.service-slide:first-of-type{background-position:center}
+.slide-copy{position:relative;z-index:3;padding:28px 52px 45px;max-width:670px;text-shadow:0 2px 8px rgba(0,0,0,.7)}
+.slide-small{font-size:15px;color:#e4edfa;margin-bottom:7px}
+.slide-big{font-size:clamp(1.8rem,5vw,3rem);line-height:1.05;font-weight:900;color:#fff}
+.arrow{position:absolute;z-index:4;top:50%;transform:translateY(-50%);width:42px;height:58px;border:0;background:transparent;color:#fff;font-size:40px;cursor:pointer;text-shadow:0 2px 10px rgba(0,0,0,.85);opacity:.78}
+.arrow:hover{opacity:1;color:#00eff2}
+.prev{left:8px}.next{right:8px}
+.dots{position:absolute;z-index:5;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;background:rgba(0,0,0,.35);padding:5px 8px;border-radius:20px}
+.dot{width:7px;height:7px;padding:0;border:0;border-radius:50%;background:#8b8b8b;cursor:pointer}
+.dot.active{width:20px;border-radius:8px;background:#fff}
+
+.questions{margin-top:44px;border-top:1px solid rgba(83,161,255,.34)}
+details{border-bottom:1px solid rgba(83,161,255,.34)}
+summary{position:relative;padding:19px 42px 19px 2px;cursor:pointer;list-style:none;font-weight:700;font-size:18px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:5px;top:50%;transform:translateY(-50%);color:var(--cyan);font-size:27px;font-weight:400}
+details[open] summary::after{content:"−"}
+.answer{padding:0 42px 20px 2px;color:var(--muted)}
+.answer p{margin:0}
+.expertise p{margin:0 0 11px}
+.expertise p:last-child{margin-bottom:0}
+.expertise strong{color:#fff}
+.note{padding-top:4px}
+
+@media(max-width:620px){
+ .page{
+   width:min(100% - 36px,900px);
+   padding:44px 0 70px;
+ }
+ .hero{
+   margin-bottom:62px;
+ }
+ h1{
+   margin-bottom:12px;
+   line-height:1.08;
+ }
+ .button{
+   width:100%;
+   margin-top:24px;
+   padding:16px 18px;
+ }
+ .small{
+   margin-top:22px;
+   line-height:1.55;
+   padding:0 6px;
+ }
+ .label{
+   margin-bottom:22px;
+ }
+ .carousel{
+   min-height:350px;
+   margin-bottom:54px;
+ }
+ .service-slide{
+   min-height:350px;
+   background-size:cover;
+   background-position:center;
+ }
+ .service-slide:first-of-type{
+   background-position:center;
+ }
+ .slide-copy{
+   padding:30px 52px 50px;
+   max-width:100%;
+ }
+ .slide-small{
+   margin-bottom:12px;
+   line-height:1.5;
+ }
+ .slide-big{
+   line-height:1.08;
+ }
+ .arrow{
+   width:34px;
+   height:52px;
+   font-size:34px;
+ }
+ .prev{left:7px}
+ .next{right:7px}
+ .dots{bottom:16px}
+ .questions{
+   margin-top:0;
+ }
+ summary{
+   padding-top:24px;
+   padding-bottom:24px;
+   line-height:1.35;
+ }
+ .answer{
+   padding-bottom:26px;
+   line-height:1.6;
+ }
+}
+@media(prefers-reduced-motion:reduce){
+  body::after{animation:none}
+  .service-slide{transition:none}
+}
+
+.lang-switch{
+  position:absolute;
+  top:18px;
+  right:0;
+  display:flex;
+  gap:4px;
+  z-index:10;
+}
+.lang-switch button{
+  border:1px solid rgba(0,239,242,.45);
+  background:rgba(5,24,68,.72);
+  color:#cbdaf3;
+  padding:6px 9px;
+  font:inherit;
+  font-size:13px;
+  cursor:pointer;
+}
+.lang-switch button.active{
+  background:#00eff2;
+  color:#071c58;
+}
+@media(max-width:620px){
+  .lang-switch{
+    position:relative;
+    top:auto;
+    right:auto;
+    justify-content:flex-end;
+    margin-bottom:28px;
+  }
+}
+
 </style>
 </head>
 <body>
 <main class="page">
-<div class="lang" aria-label="Idioma"><button class="on" data-lang="es">ES</button><button data-lang="en">EN</button></div>
-<section class="hero">
-<h1 data-t="hero">No se complique, viva feliz.</h1>
-<p class="intro" data-t="intro">Tutorías y apoyo académico en informática, programación, proyectos, investigación y documentación.</p>
-<div class="offer"><div class="price">₡25.000 <span data-t="monthly">/ mes</span></div><p data-t="offer">Toda la ayuda académica que necesite. Pago al final del mes.</p></div>
-<a class="button" href="https://wa.me/50688728562?text=Hola%2C%20quiero%20consultar%20sobre%20Academic%20Aid" target="_blank" rel="noopener noreferrer"><span data-t="whatsapp">Consultar por WhatsApp</span> ↗</a>
-</section>
-<h2 data-t="types">Tipos de ayuda</h2>
-<section class="carousel" aria-label="Tipos de ayuda">
-<article class="slide active" data-emoji="📄"><small data-t="d1">Libros, capítulos, videos, lecturas y otros materiales.</small><strong data-t="s1">Síntesis y trabajos cortos</strong></article>
-<article class="slide" data-emoji="💻"><small data-t="d2">Partes de código, ejercicios, revisión de errores y explicación de soluciones.</small><strong data-t="s2">Programación</strong></article>
-<article class="slide" data-emoji="📝"><small data-t="d3">Informes, documentación técnica, redacción y correcciones.</small><strong data-t="s3">Documentación</strong></article>
-<article class="slide" data-emoji="🧩"><small data-t="d4">Apoyo con partes específicas y organización de proyectos individuales o grupales.</small><strong data-t="s4">Proyectos</strong></article>
-<article class="slide" data-emoji="📊"><small data-t="d5">Diapositivas, estructura de exposiciones y guiones.</small><strong data-t="s5">Presentaciones</strong></article>
-<article class="slide" data-emoji="🎓"><small data-t="d6">Explicaciones individuales, práctica y preparación para evaluaciones.</small><strong data-t="s6">Tutorías</strong></article>
-<button class="nav prev" type="button" aria-label="Anterior">‹</button><button class="nav next" type="button" aria-label="Siguiente">›</button><span class="count" aria-live="polite">1 / 6</span>
-</section>
-<section class="questions">
-<details><summary data-t="q1">¿Cómo funcionan los precios?</summary><div class="answer"><p data-t="a1">₡25.000 al mes por toda la ayuda académica que necesite. Pago al final del mes.</p><p data-t="a1b">Para consultas individuales, el precio depende del trabajo y del tiempo disponible.</p></div></details>
-<details><summary data-t="q2">¿Con qué tecnologías trabajan?</summary><div class="answer"><p><strong>Programación:</strong> Python, Java, C, C++, C#, JavaScript, TypeScript, PHP, Kotlin, Swift, Go, Rust, R, MATLAB, Visual Basic y PSeInt.</p><p><strong>Web:</strong> HTML, CSS, React, Angular, Vue, Node.js, Express, Next.js, Bootstrap, Tailwind, ASP.NET, Spring Boot, Laravel, Django y Flask.</p><p><strong>Bases de datos:</strong> MySQL, PostgreSQL, SQL Server, Oracle, SQLite, MongoDB, Firebase y Access.</p><p><strong>Herramientas:</strong> Git, GitHub, VS Code, Visual Studio, IntelliJ, Eclipse, NetBeans, Android Studio, Postman, Docker, Power BI, Excel, SPSS, Jira y otras.</p><p data-t="noCisco"><strong>Excepción:</strong> no se realizan trabajos de Cisco / redes.</p></div></details>
-<details><summary data-t="q3">¿Qué trabajos puedo consultar?</summary><div class="answer"><p data-t="a3">Ejercicios, código, proyectos, documentación, investigación, presentaciones y tutorías. Envíeme las instrucciones y le confirmo si puedo ayudarle.</p></div></details>
-</section>
+  <div class="lang-switch" aria-label="Idioma / Language">
+    <button type="button" class="active" data-lang="es">ES</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+  <section class="hero">
+    <h1 data-i18n="hero">Que la entrega no se le complique</h1>
+    <a class="button" href="https://wa.me/50688728562?text=Hola%21%20Vi%20el%20anuncio%20y%20necesito%20ayuda%20con%20un%20trabajo." target="_blank" rel="noopener">
+      <svg class="wa-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span data-i18n="whatsapp">Consultar por WhatsApp</span></a>
+    <p class="small" data-i18n="micro">Envíenos la rúbrica o las instrucciones. Revisamos el trabajo y podemos acordar el precio antes de empezar.</p>
+  </section>
+
+  <h2 class="label" data-i18n="types">TIPOS DE AYUDA</h2>
+  <section class="carousel" aria-label="Tipos de ayuda">
+    
+      <article class="service-slide active" style="background-image:linear-gradient(90deg,rgba(2,12,42,.96) 0%,rgba(2,12,42,.78) 45%,rgba(2,12,42,.18) 100%),url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDU2MCI+PHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iNTYwIiBmaWxsPSIjMDkyNDVmIi8+PHBhdGggZD0iTTAgODBIMTIwME0xNjAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMCAxNjBIMTIwME0zMjAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMCAyNDBIMTIwME00ODAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMCAzMjBIMTIwME02NDAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMCA0MDBIMTIwME04MDAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMCA0ODBIMTIwME05NjAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNNjkwIDkwaDI2MGw5NSA5NXYyODBINjkweiIgZmlsbD0iI2U4ZjFmZiIgb3BhY2l0eT0iLjk1Ii8+CiAgICAgICAgPHBhdGggZD0iTTk1MCA5MHY5NWg5NSIgZmlsbD0iIzlmYzZmZiIvPgogICAgICAgIDxwYXRoIGQ9Ik03NDUgMjQ1aDIzME03NDUgMzAwaDIzME03NDUgMzU1aDE3MCIgc3Ryb2tlPSIjMTc2NWI4IiBzdHJva2Utd2lkdGg9IjE2IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L3N2Zz4=')">
+        <div class="slide-copy">
+          <div class="slide-small"><span data-i18n="slide1d">Libros, capítulos, videos, lecturas y otros materiales.</span></div>
+          <div class="slide-big"><span data-i18n="slide1t">Síntesis y trabajos cortos</span></div>
+        </div>
+      </article>
+      <article class="service-slide" style="background-image:linear-gradient(90deg,rgba(2,12,42,.96) 0%,rgba(2,12,42,.78) 45%,rgba(2,12,42,.18) 100%),url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNTAwIDY3MCI+CjxyZWN0IHdpZHRoPSIxNTAwIiBoZWlnaHQ9IjY3MCIgZmlsbD0iIzA5MjQ1ZiIvPgo8ZyBvcGFjaXR5PSIuMzIiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIj4KPHBhdGggZD0iTTAgMTAwSDE1MDBNMCAyMjBIMTUwME0wIDM0MEgxNTAwTTAgNDYwSDE1MDBNMCA1ODBIMTUwMCIvPgo8cGF0aCBkPSJNMTgwIDBWNjcwTTQyMCAwVjY3ME02NjAgMFY2NzBNOTAwIDBWNjcwTTExNDAgMFY2NzBNMTM4MCAwVjY3MCIvPgo8L2c+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDkyMCAxMjApIj4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMyMCIgcng9IjIwIiBmaWxsPSIjMDcxYTMzIiBzdHJva2U9IiMwMGVmZjIiIHN0cm9rZS13aWR0aD0iNSIvPgogIDxjaXJjbGUgY3g9IjQyIiBjeT0iNDAiIHI9IjEwIiBmaWxsPSIjMDBlZmYyIi8+CiAgPGNpcmNsZSBjeD0iNzYiIGN5PSI0MCIgcj0iMTAiIGZpbGw9IiMyYjczZDIiLz4KICA8cGF0aCBkPSJNMTA4IDEzMmwtNTggNDggNTggNDhNMjkyIDEzMmw1OCA0OC01OCA0OE0yMjIgMTA1bC01NSAxNTgiCiAgICAgICAgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iLjYyIiBzdHJva2Utd2lkdGg9IjE4IgogICAgICAgIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L2c+Cjwvc3ZnPg==')">
+        <div class="slide-copy">
+          <div class="slide-small"><span data-i18n="slide2d">Partes de código, ejercicios, revisión de errores y explicación de soluciones.</span></div>
+          <div class="slide-big"><span data-i18n="slide2t">Programación</span></div>
+        </div>
+      </article>
+      <article class="service-slide" style="background-image:linear-gradient(90deg,rgba(2,12,42,.96) 0%,rgba(2,12,42,.78) 45%,rgba(2,12,42,.18) 100%),url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDU2MCI+PHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iNTYwIiBmaWxsPSIjMDkyNDVmIi8+PHBhdGggZD0iTTAgODBIMTIwME0xNjAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMCAxNjBIMTIwME0zMjAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMCAyNDBIMTIwME00ODAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMCAzMjBIMTIwME02NDAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMCA0MDBIMTIwME04MDAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMCA0ODBIMTIwME05NjAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNNjkwIDkwaDI2MGw5NSA5NXYyODBINjkweiIgZmlsbD0iI2U4ZjFmZiIgb3BhY2l0eT0iLjk1Ii8+CiAgICAgICAgPHBhdGggZD0iTTk1MCA5MHY5NWg5NSIgZmlsbD0iIzlmYzZmZiIvPgogICAgICAgIDxwYXRoIGQ9Ik03NDUgMjQ1aDIzME03NDUgMzAwaDIzME03NDUgMzU1aDE3MCIgc3Ryb2tlPSIjMTc2NWI4IiBzdHJva2Utd2lkdGg9IjE2IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L3N2Zz4=')">
+        <div class="slide-copy">
+          <div class="slide-small"><span data-i18n="slide3d">Informes, documentación técnica, redacción, revisión y organización.</span></div>
+          <div class="slide-big"><span data-i18n="slide3t">Documentación</span></div>
+        </div>
+      </article>
+      <article class="service-slide" style="background-image:linear-gradient(90deg,rgba(2,12,42,.96) 0%,rgba(2,12,42,.78) 45%,rgba(2,12,42,.18) 100%),url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDU2MCI+PHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iNTYwIiBmaWxsPSIjMDkyNDVmIi8+PHBhdGggZD0iTTAgODBIMTIwME0xNjAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMCAxNjBIMTIwME0zMjAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMCAyNDBIMTIwME00ODAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMCAzMjBIMTIwME02NDAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMCA0MDBIMTIwME04MDAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMCA0ODBIMTIwME05NjAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48Y2lyY2xlIGN4PSI3ODAiIGN5PSIxODAiIHI9IjYyIiBmaWxsPSIjMDBlZmYyIi8+PGNpcmNsZSBjeD0iOTYwIiBjeT0iMzAwIiByPSI2MiIgZmlsbD0iIzJiNzNkMiIvPgogICAgICAgIDxjaXJjbGUgY3g9IjcwMCIgY3k9IjM5MCIgcj0iNjIiIGZpbGw9IiNmZmYiLz4KICAgICAgICA8cGF0aCBkPSJNODI1IDIxMGw5MCA2ME03NTAgMjM1bC0zNSA5NU03NTUgMzg1bDE0NS02MCIgc3Ryb2tlPSIjOWZjNmZmIiBzdHJva2Utd2lkdGg9IjE4Ii8+PC9zdmc+')">
+        <div class="slide-copy">
+          <div class="slide-small"><span data-i18n="slide4d">Apoyo en proyectos individuales o grupales, desde partes específicas hasta su organización.</span></div>
+          <div class="slide-big"><span data-i18n="slide4t">Proyectos</span></div>
+        </div>
+      </article>
+      <article class="service-slide" style="background-image:linear-gradient(90deg,rgba(2,12,42,.96) 0%,rgba(2,12,42,.78) 45%,rgba(2,12,42,.18) 100%),url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDU2MCI+PHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iNTYwIiBmaWxsPSIjMDkyNDVmIi8+PHBhdGggZD0iTTAgODBIMTIwME0xNjAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMCAxNjBIMTIwME0zMjAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMCAyNDBIMTIwME00ODAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMCAzMjBIMTIwME02NDAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMCA0MDBIMTIwME04MDAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMCA0ODBIMTIwME05NjAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cmVjdCB4PSI2NTUiIHk9Ijg1IiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI5MCIgcng9IjEwIiBmaWxsPSIjZThmMWZmIi8+CiAgICAgICAgPHJlY3QgeD0iNzAwIiB5PSIxMzUiIHdpZHRoPSIxNjAiIGhlaWdodD0iMjgiIGZpbGw9IiMxNzY1YjgiLz4KICAgICAgICA8cmVjdCB4PSI3MDAiIHk9IjE5MCIgd2lkdGg9IjI4MCIgaGVpZ2h0PSIxNSIgZmlsbD0iIzhiYjdlYSIvPgogICAgICAgIDxyZWN0IHg9IjcwMCIgeT0iMjI1IiB3aWR0aD0iMjMwIiBoZWlnaHQ9IjE1IiBmaWxsPSIjOGJiN2VhIi8+CiAgICAgICAgPHBhdGggZD0iTTg1NSAzNzV2ODVNNzYwIDQ2MGgxOTAiIHN0cm9rZT0iIzAwZWZmMiIgc3Ryb2tlLXdpZHRoPSIxNiIvPjwvc3ZnPg==')">
+        <div class="slide-copy">
+          <div class="slide-small"><span data-i18n="slide5d">Diapositivas, estructura de la exposición y guiones para presentar.</span></div>
+          <div class="slide-big"><span data-i18n="slide5t">Presentaciones</span></div>
+        </div>
+      </article>
+      <article class="service-slide" style="background-image:linear-gradient(90deg,rgba(2,12,42,.96) 0%,rgba(2,12,42,.78) 45%,rgba(2,12,42,.18) 100%),url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDU2MCI+PHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iNTYwIiBmaWxsPSIjMDkyNDVmIi8+PHBhdGggZD0iTTAgODBIMTIwME0xNjAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMCAxNjBIMTIwME0zMjAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMCAyNDBIMTIwME00ODAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMCAzMjBIMTIwME02NDAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMCA0MDBIMTIwME04MDAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48cGF0aCBkPSJNMCA0ODBIMTIwME05NjAgMFY1NjAiIHN0cm9rZT0iIzFiNGI5MSIgc3Ryb2tlLXdpZHRoPSIyIiBvcGFjaXR5PSIuMzIiLz48Y2lyY2xlIGN4PSI4NTAiIGN5PSIxOTAiIHI9Ijc1IiBmaWxsPSIjMDBlZmYyIi8+CiAgICAgICAgPHBhdGggZD0iTTcwMCA0NDBjMjAtMTIwIDg1LTE3NSAxNTAtMTc1czEzMCA1NSAxNTAgMTc1IiBmaWxsPSIjMmI3M2QyIi8+CiAgICAgICAgPHBhdGggZD0iTTY2MCAxNjVjMC0xMDUgODUtMTI1IDE5MC0xMjVzMTkwIDIwIDE5MCAxMjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U4ZjFmZiIgc3Ryb2tlLXdpZHRoPSIyMCIvPgogICAgICAgIDxyZWN0IHg9IjYyNSIgeT0iMTU1IiB3aWR0aD0iNTUiIGhlaWdodD0iMTAwIiByeD0iMjAiIGZpbGw9IiNlOGYxZmYiLz48cmVjdCB4PSIxMDIwIiB5PSIxNTUiIHdpZHRoPSI1NSIgaGVpZ2h0PSIxMDAiIHJ4PSIyMCIgZmlsbD0iI2U4ZjFmZiIvPjwvc3ZnPg==')">
+        <div class="slide-copy">
+          <div class="slide-small"><span data-i18n="slide6d">Explicación individual de temas, ejercicios y preparación para trabajos o evaluaciones.</span></div>
+          <div class="slide-big"><span data-i18n="slide6t">Tutorías</span></div>
+        </div>
+      </article>
+    <button class="arrow prev" aria-label="Anterior">‹</button>
+    <button class="arrow next" aria-label="Siguiente">›</button>
+    <div class="dots"><button class="dot active" aria-label="Ir a Síntesis y trabajos cortos" data-index="0"></button><button class="dot" aria-label="Ir a Programación" data-index="1"></button><button class="dot" aria-label="Ir a Documentación" data-index="2"></button><button class="dot" aria-label="Ir a Proyectos" data-index="3"></button><button class="dot" aria-label="Ir a Presentaciones" data-index="4"></button><button class="dot" aria-label="Ir a Tutorías" data-index="5"></button></div>
+  </section>
+
+  <section class="questions">
+    <details>
+      <summary><span data-i18n="q_price">¿Cuánto cuesta?</span></summary>
+      <div class="answer">
+        <p data-i18n="price_answer">El precio varía según la extensión, la complejidad y el tiempo disponible. Una síntesis corta, una parte de código y un proyecto de varias semanas, por ejemplo, requieren cantidades de trabajo distintas.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span data-i18n="q_tech">¿Con qué tecnologías y herramientas trabajan?</span></summary>
+      <div class="answer expertise">
+        <p data-i18n-html="tech1"><strong>Programación:</strong> Python, Java, C, C++, C#, JavaScript, TypeScript, PHP, Kotlin, Swift, Go, Rust, R, MATLAB, Visual Basic y pseudocódigo/PSeInt.</p>
+        <p data-i18n-html="tech2"><strong>Desarrollo web:</strong> HTML, CSS, React, Angular, Vue, Node.js, Express, Next.js, Bootstrap, Tailwind, ASP.NET, Spring Boot, Laravel, Django y Flask.</p>
+        <p data-i18n-html="tech3"><strong>Bases de datos:</strong> MySQL, PostgreSQL, SQL Server, Oracle, SQLite, MongoDB, Firebase, Access, SQL y modelado de bases de datos.</p>
+        <p data-i18n-html="tech4"><strong>Herramientas de desarrollo:</strong> Git, GitHub, GitLab, Visual Studio, VS Code, IntelliJ, Eclipse, NetBeans, Android Studio, Postman y Docker.</p>
+        <p data-i18n-html="tech5"><strong>Ofimática y datos:</strong> Word, Excel, PowerPoint, Access, Visio, Project, Power BI, Tableau, SPSS, pandas, Jupyter y MATLAB.</p>
+        <p data-i18n-html="tech6"><strong>Modelado y proyectos:</strong> UML, draw.io, Lucidchart, StarUML, Jira, Trello y herramientas relacionadas con Scrum o Kanban.</p>
+        <p data-i18n-html="tech7"><strong>Sistemas y nube:</strong> Linux, Windows, Windows Server, AWS, Azure, Google Cloud, máquinas virtuales, VirtualBox, VMware, Bash y PowerShell.</p>
+        <p data-i18n-html="tech8"><strong>Trabajo académico:</strong> APA 7, metodología de investigación, búsquedas bibliográficas, citas y referencias, IMRD, redacción y revisión académica.</p>
+        <p class="note" data-i18n-html="tech9"><strong>Redes:</strong> no se realizan trabajos de Cisco.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span data-i18n="q_work">¿Qué tipo de trabajos pueden cubrir?</span></summary>
+      <div class="answer">
+        <p data-i18n="work_answer">Desde ejercicios o partes específicas de un trabajo hasta síntesis de libros o videos, documentación, investigaciones, proyectos individuales o grupales y presentaciones con guion.</p>
+      </div>
+    </details>
+  </section>
 </main>
+
 <script>
-const slides=[...document.querySelectorAll('.slide')];let current=0;let timer;
-function show(n){current=(n+slides.length)%slides.length;slides.forEach((el,i)=>el.classList.toggle('active',i===current));document.querySelector('.count').textContent=`${current+1} / ${slides.length}`}
-function cycle(){clearInterval(timer);timer=setInterval(()=>show(current+1),6000)}
-document.querySelector('.prev').addEventListener('click',()=>{show(current-1);cycle()});document.querySelector('.next').addEventListener('click',()=>{show(current+1);cycle()});
-document.querySelector('.carousel').addEventListener('mouseenter',()=>clearInterval(timer));document.querySelector('.carousel').addEventListener('mouseleave',cycle);document.addEventListener('visibilitychange',()=>document.hidden?clearInterval(timer):cycle());cycle();
-const dict={
-en:{hero:'Keep it simple. Enjoy life.',intro:'Tutoring and academic support for computing, programming, projects, research, and documentation.',monthly:'/ month',offer:'All the academic help you need. Pay at the end of the month.',whatsapp:'Ask on WhatsApp',types:'Types of help',s1:'Summaries and short assignments',d1:'Books, chapters, videos, readings, and other materials.',s2:'Programming',d2:'Code sections, exercises, debugging, and explanations.',s3:'Documentation',d3:'Reports, technical writing, proofreading and revisions.',s4:'Projects',d4:'Help with specific parts and organization of individual or group projects.',s5:'Presentations',d5:'Slides, presentation structure, and scripts.',s6:'Tutoring',d6:'One-on-one explanations, practice, and exam preparation.',q1:'How does pricing work?',a1:'₡25,000 per month for all the academic help you need. Pay at the end of the month.',a1b:'One-off requests are quoted based on the work and timeframe.',q2:'What technologies do you cover?',noCisco:'Exception: Cisco / networking assignments are not offered.',q3:'What can I ask about?',a3:'Exercises, coding, projects, documentation, research, presentations and tutoring. Send the instructions and I’ll confirm whether I can help.'},
-es:{hero:'No se complique, viva feliz.',intro:'Tutorías y apoyo académico en informática, programación, proyectos, investigación y documentación.',monthly:'/ mes',offer:'Toda la ayuda académica que necesite. Pago al final del mes.',whatsapp:'Consultar por WhatsApp',types:'Tipos de ayuda',s1:'Síntesis y trabajos cortos',d1:'Libros, capítulos, videos, lecturas y otros materiales.',s2:'Programación',d2:'Partes de código, ejercicios, revisión de errores y explicación de soluciones.',s3:'Documentación',d3:'Informes, documentación técnica, redacción y correcciones.',s4:'Proyectos',d4:'Apoyo con partes específicas y organización de proyectos individuales o grupales.',s5:'Presentaciones',d5:'Diapositivas, estructura de exposiciones y guiones.',s6:'Tutorías',d6:'Explicaciones individuales, práctica y preparación para evaluaciones.',q1:'¿Cómo funcionan los precios?',a1:'₡25.000 al mes por toda la ayuda académica que necesite. Pago al final del mes.',a1b:'Para consultas individuales, el precio depende del trabajo y del tiempo disponible.',q2:'¿Con qué tecnologías trabajan?',noCisco:'Excepción: no se realizan trabajos de Cisco / redes.',q3:'¿Qué trabajos puedo consultar?',a3:'Ejercicios, código, proyectos, documentación, investigación, presentaciones y tutorías. Envíeme las instrucciones y le confirmo si puedo ayudarle.'}};
-function language(lang){document.documentElement.lang=lang;document.querySelectorAll('[data-t]').forEach(el=>{el.textContent=dict[lang][el.dataset.t]});document.querySelectorAll('.lang button').forEach(el=>el.classList.toggle('on',el.dataset.lang===lang));try{localStorage.setItem('aa-lang',lang)}catch(e){}}
-document.querySelectorAll('.lang button').forEach(el=>el.addEventListener('click',()=>language(el.dataset.lang)));let saved='es';try{saved=localStorage.getItem('aa-lang')||'es'}catch(e){}language(saved==='en'?'en':'es');
+const slides=[...document.querySelectorAll('.service-slide')];
+const dots=[...document.querySelectorAll('.dot')];
+let current=0;
+let timer;
+
+function showSlide(i){
+  current=(i+slides.length)%slides.length;
+  slides.forEach((s,n)=>s.classList.toggle('active',n===current));
+  dots.forEach((d,n)=>d.classList.toggle('active',n===current));
+}
+function restart(){
+  clearInterval(timer);
+  timer=setInterval(()=>showSlide(current+1),5200);
+}
+document.querySelector('.next').addEventListener('click',()=>{showSlide(current+1);restart()});
+document.querySelector('.prev').addEventListener('click',()=>{showSlide(current-1);restart()});
+dots.forEach(d=>d.addEventListener('click',()=>{showSlide(Number(d.dataset.index));restart()}));
+document.querySelector('.carousel').addEventListener('mouseenter',()=>clearInterval(timer));
+document.querySelector('.carousel').addEventListener('mouseleave',restart);
+restart();
+
+
+
+
+const translations = {
+  es: {
+    hero: "Que la entrega no se le complique",
+    whatsapp: "Consultar por WhatsApp",
+    micro: "Envíenos la rúbrica o las instrucciones. Revisamos el trabajo y podemos acordar el precio antes de empezar.",
+    types: "TIPOS DE AYUDA",
+    slide1t: "Síntesis y trabajos cortos", slide1d: "Libros, capítulos, videos, lecturas y otros materiales.",
+    slide2t: "Programación", slide2d: "Partes de código, ejercicios, revisión de errores y explicación de soluciones.",
+    slide3t: "Documentación", slide3d: "Informes, documentación técnica, redacción, revisión y organización.",
+    slide4t: "Proyectos", slide4d: "Apoyo en proyectos individuales o grupales, desde partes específicas hasta su organización.",
+    slide5t: "Presentaciones", slide5d: "Diapositivas, estructura de la exposición y guiones para presentar.",
+    slide6t: "Tutorías", slide6d: "Explicación individual de temas, ejercicios y preparación para trabajos o evaluaciones.",
+    q_price: "¿Cuánto cuesta?",
+    price_answer: "El precio varía según la extensión, la complejidad y el tiempo disponible. Una síntesis corta, una parte de código y un proyecto de varias semanas, por ejemplo, requieren cantidades de trabajo distintas.",
+    q_tech: "¿Con qué tecnologías y herramientas trabajan?",
+    q_work: "¿Qué tipo de trabajos pueden cubrir?",
+    work_answer: "Desde ejercicios o partes específicas de un trabajo hasta síntesis de libros o videos, documentación, investigaciones, proyectos individuales o grupales y presentaciones con guion."
+  },
+  en: {
+    hero: "Don’t let the assignment get complicated",
+    whatsapp: "Ask on WhatsApp",
+    micro: "Send us the rubric or instructions. We’ll review the work and can agree on a price before starting.",
+    types: "TYPES OF HELP",
+    slide1t: "Summaries and short assignments", slide1d: "Books, chapters, videos, readings, and other materials.",
+    slide2t: "Programming", slide2d: "Code sections, exercises, debugging, and explanations.",
+    slide3t: "Documentation", slide3d: "Reports, technical documentation, writing, revision, and organization.",
+    slide4t: "Projects", slide4d: "Support for individual or group projects, from specific sections to overall organization.",
+    slide5t: "Presentations", slide5d: "Slides, presentation structure, and speaking scripts.",
+    slide6t: "Tutoring", slide6d: "One-on-one explanations, exercises, and preparation for assignments or assessments.",
+    q_price: "How much does it cost?",
+    price_answer: "Pricing varies depending on length, complexity, and available time. A short summary, a piece of code, and a multi-week project, for example, require very different amounts of work.",
+    q_tech: "What technologies and tools do you work with?",
+    q_work: "What kinds of assignments can you cover?",
+    work_answer: "From exercises or specific parts of an assignment to book or video summaries, documentation, research, individual or group projects, and presentations with scripts."
+  }
+};
+
+const htmlTranslations = {
+  es: {
+    tech1:"<strong>Programación:</strong> Python, Java, C, C++, C#, JavaScript, TypeScript, PHP, Kotlin, Swift, Go, Rust, R, MATLAB, Visual Basic y pseudocódigo/PSeInt.",
+    tech2:"<strong>Desarrollo web:</strong> HTML, CSS, React, Angular, Vue, Node.js, Express, Next.js, Bootstrap, Tailwind, ASP.NET, Spring Boot, Laravel, Django y Flask.",
+    tech3:"<strong>Bases de datos:</strong> MySQL, PostgreSQL, SQL Server, Oracle, SQLite, MongoDB, Firebase, Access, SQL y modelado de bases de datos.",
+    tech4:"<strong>Herramientas de desarrollo:</strong> Git, GitHub, GitLab, Visual Studio, VS Code, IntelliJ, Eclipse, NetBeans, Android Studio, Postman y Docker.",
+    tech5:"<strong>Ofimática y datos:</strong> Word, Excel, PowerPoint, Access, Visio, Project, Power BI, Tableau, SPSS, pandas, Jupyter y MATLAB.",
+    tech6:"<strong>Modelado y proyectos:</strong> UML, draw.io, Lucidchart, StarUML, Jira, Trello y herramientas relacionadas con Scrum o Kanban.",
+    tech7:"<strong>Sistemas y nube:</strong> Linux, Windows, Windows Server, AWS, Azure, Google Cloud, máquinas virtuales, VirtualBox, VMware, Bash y PowerShell.",
+    tech8:"<strong>Trabajo académico:</strong> APA 7, metodología de investigación, búsquedas bibliográficas, citas y referencias, IMRD, redacción y revisión académica.",
+    tech9:"<strong>Redes:</strong> no se realizan trabajos de Cisco."
+  },
+  en: {
+    tech1:"<strong>Programming:</strong> Python, Java, C, C++, C#, JavaScript, TypeScript, PHP, Kotlin, Swift, Go, Rust, R, MATLAB, Visual Basic, and pseudocode/PSeInt.",
+    tech2:"<strong>Web development:</strong> HTML, CSS, React, Angular, Vue, Node.js, Express, Next.js, Bootstrap, Tailwind, ASP.NET, Spring Boot, Laravel, Django, and Flask.",
+    tech3:"<strong>Databases:</strong> MySQL, PostgreSQL, SQL Server, Oracle, SQLite, MongoDB, Firebase, Access, SQL, and database modeling.",
+    tech4:"<strong>Development tools:</strong> Git, GitHub, GitLab, Visual Studio, VS Code, IntelliJ, Eclipse, NetBeans, Android Studio, Postman, and Docker.",
+    tech5:"<strong>Office and data:</strong> Word, Excel, PowerPoint, Access, Visio, Project, Power BI, Tableau, SPSS, pandas, Jupyter, and MATLAB.",
+    tech6:"<strong>Modeling and projects:</strong> UML, draw.io, Lucidchart, StarUML, Jira, Trello, and tools related to Scrum or Kanban.",
+    tech7:"<strong>Systems and cloud:</strong> Linux, Windows, Windows Server, AWS, Azure, Google Cloud, virtual machines, VirtualBox, VMware, Bash, and PowerShell.",
+    tech8:"<strong>Academic work:</strong> APA 7, research methodology, literature searches, citations and references, IMRD, academic writing, and revision.",
+    tech9:"<strong>Networking:</strong> Cisco assignments are not offered."
+  }
+};
+
+function setLanguage(lang){
+  document.documentElement.lang=lang;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const value=translations[lang][el.dataset.i18n];
+    if(value!==undefined) el.textContent=value;
+  });
+  document.querySelectorAll("[data-i18n-html]").forEach(el=>{
+    const value=htmlTranslations[lang][el.dataset.i18nHtml];
+    if(value!==undefined) el.innerHTML=value;
+  });
+  document.querySelectorAll(".lang-switch button").forEach(btn=>{
+    btn.classList.toggle("active",btn.dataset.lang===lang);
+  });
+  localStorage.setItem("academicAidLanguage",lang);
+}
+
+
+
+
+document.querySelectorAll(".lang-switch button").forEach(btn => {
+  btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+});
+setLanguage(localStorage.getItem("academicAidLanguage") || "es");
+
 </script>
 </body>
 </html>
