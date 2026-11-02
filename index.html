@@ -4,39 +4,39 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#222529">
-  <meta name="description" content="Servicios digitales a medida: desarrollo web, programación, automatización, documentos, hojas de cálculo y presentaciones. Cotiza por WhatsApp.">
+  <meta name="description" content="Ayuda digital para necesidades personales: páginas web, programación, automatización, Excel, documentos y proyectos a medida. Consulta por WhatsApp.">
   <title>Servicios Digitales — Soluciones a medida</title>
   <style>
     :root {
       color-scheme: dark;
       --bg:#222529; --bg-deep:#1b1e22; --panel:#2b2f35; --panel-up:#30343b;
       --text:#f5f7f8; --sub:#c0c4c9; --dim:#8d929b;
-      --teal:#00c8d4; --teal-bright:#19e3e9; --orange:#f16d36;
+      --accent:#ef8248; --accent-light:#ffa16c; --orange:#f4773b;
       --line:rgba(255,255,255,.105); --shadow:0 22px 54px rgba(0,0,0,.29);
     }
     *,*::before,*::after {box-sizing:border-box}
     html {scroll-behavior:smooth;scroll-padding-top:92px}
     body {margin:0;min-width:320px;background:var(--bg);color:var(--text);font-family:Inter,"Segoe UI",Arial,sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
-    body::selection {background:rgba(0,200,212,.32)}
+    body::selection {background:rgba(239,130,72,.32)}
     a {color:inherit;text-decoration:none}
     button,input,select,textarea {font:inherit}
     button {cursor:pointer}
-    button:focus-visible,a:focus-visible,textarea:focus-visible,select:focus-visible {outline:3px solid var(--teal-bright);outline-offset:4px}
+    button:focus-visible,a:focus-visible,textarea:focus-visible,select:focus-visible {outline:3px solid var(--accent-light);outline-offset:4px}
     .container {width:min(1160px,calc(100% - 72px));margin:auto}
-    .skip {position:absolute;left:15px;top:-100px;background:var(--teal);color:#09232a;padding:10px 16px;z-index:100}
+    .skip {position:absolute;left:15px;top:-100px;background:var(--accent);color:#241710;padding:10px 16px;z-index:100}
     .skip:focus {top:10px}
     .site-header {position:relative;z-index:20;background:var(--bg)}
     .header-row {height:96px;display:flex;align-items:center;gap:36px;justify-content:space-between}
     .brand {display:inline-flex;flex-direction:column;align-items:flex-start;justify-content:center;font-size:16px;font-weight:900;line-height:.97;letter-spacing:.055em;white-space:nowrap}
-    .brand span:last-child {font-size:9px;color:var(--teal);letter-spacing:.28em;margin-top:6px}
+    .brand span:last-child {font-size:9px;color:var(--accent);letter-spacing:.28em;margin-top:6px}
     .nav {display:flex;gap:32px;align-items:center;margin-inline:auto}
     .nav a {font-size:13px;font-weight:650;color:#d5d8db;transition:color .2s}
-    .nav a:hover {color:var(--teal-bright)}
+    .nav a:hover {color:var(--accent-light)}
     .header-actions {display:flex;align-items:center;gap:15px}
     .lang {display:flex;gap:1px;padding:3px;border:1px solid #41464d;border-radius:5px}
     .lang button {border:0;border-radius:3px;background:transparent;color:#a8adb3;font-weight:800;font-size:11px;padding:5px 8px;min-width:32px}
     .lang button[aria-pressed="true"] {background:#41464d;color:#fff}
-    .header-cta {display:inline-flex;align-items:center;gap:13px;justify-content:center;background:linear-gradient(180deg,#0cd7df,#079ca7);color:#061d23;border:1px solid rgba(31,239,245,.3);border-radius:5px;padding:11px 15px;font-size:12px;font-weight:850;white-space:nowrap;box-shadow:0 7px 20px rgba(0,194,209,.12);transition:transform .2s,filter .2s}
+    .header-cta {display:inline-flex;align-items:center;gap:13px;justify-content:center;background:linear-gradient(180deg,#ff995c,#ea723a);color:#261508;border:1px solid rgba(255,166,108,.3);border-radius:5px;padding:11px 15px;font-size:12px;font-weight:850;white-space:nowrap;box-shadow:0 7px 20px rgba(239,130,72,.12);transition:transform .2s,filter .2s}
     .header-cta:hover,.btn-primary:hover {transform:translateY(-2px);filter:brightness(1.12)}
     .header-cta svg,.btn-primary svg {width:15px;height:15px;flex:0 0 auto}
     .mobile-nav {display:none}
@@ -46,20 +46,20 @@
     .hero-shell::before {content:"";position:absolute;inset:0;z-index:-1;opacity:.48;background-image:linear-gradient(to bottom,transparent 50%,rgba(255,255,255,.02) 50%);background-size:100% 4px;pointer-events:none}
     .hero-layout {display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);align-items:center;gap:40px;min-height:590px;padding:38px 0 80px}
     .hero-copy {position:relative;z-index:3;max-width:650px}
-    .hero-overline {display:flex;gap:9px;align-items:center;margin-bottom:20px;color:var(--teal-bright);text-transform:uppercase;letter-spacing:.18em;font-weight:850;font-size:10px}
-    .hero-overline .line {width:24px;height:2px;background:var(--teal-bright)}
+    .hero-overline {display:flex;gap:9px;align-items:center;margin-bottom:20px;color:#eac0aa;text-transform:uppercase;letter-spacing:.18em;font-weight:850;font-size:10px}
+    .hero-overline .line {width:24px;height:2px;background:var(--accent-light)}
     h1,h2,h3,p {margin-top:0}
     h1 {font-size:clamp(2.9rem,4.55vw,4.45rem);font-weight:780;line-height:1.11;letter-spacing:-.055em;max-width:660px;margin:0 0 24px}
-    h1 .accent {color:var(--teal)}
+    h1 .accent {color:var(--accent)}
     .hero-description {max-width:510px;font-size:15px;line-height:1.72;color:#c6c9ce;margin:0 0 27px}
     .hero-actions {display:flex;align-items:center;gap:25px;flex-wrap:wrap}
-    .btn-primary {display:inline-flex;align-items:center;justify-content:center;gap:16px;background:linear-gradient(180deg,#07cbd6,#078c9b);color:#061c22;box-shadow:0 10px 20px rgba(0,0,0,.18),0 7px 18px rgba(0,191,204,.15);border:1px solid rgba(27,241,244,.14);border-radius:5px;padding:13px 18px;font-size:13px;min-height:49px;font-weight:850;transition:filter .2s,transform .2s}
-    .btn-secondary {font-size:12px;font-weight:800;color:#d9edf0;display:inline-flex;gap:9px;align-items:center;transition:color .2s}
-    .btn-secondary:hover {color:var(--teal-bright)}
+    .btn-primary {display:inline-flex;align-items:center;justify-content:center;gap:16px;background:linear-gradient(180deg,#ff995c,#ea723a);color:#261508;box-shadow:0 10px 20px rgba(0,0,0,.18),0 7px 18px rgba(239,130,72,.15);border:1px solid rgba(255,166,108,.14);border-radius:5px;padding:13px 18px;font-size:13px;min-height:49px;font-weight:850;transition:filter .2s,transform .2s}
+    .btn-secondary {font-size:12px;font-weight:800;color:#f4ebe5;display:inline-flex;gap:9px;align-items:center;transition:color .2s}
+    .btn-secondary:hover {color:var(--accent-light)}
     .btn-secondary svg {width:15px;height:15px}
     .hero-fine {font-size:11px;line-height:1.6;color:#989ea5;margin:20px 0 0}
     .hero-fine b {color:#c2c9ce;font-weight:600}
-    /* reference-style faint circuitry, teal marker and layered presentation */
+    /* reference-style faint circuitry, orange marker and layered presentation */
     .circuit {position:absolute;left:max(22px,calc((100% - 1160px)/2 - 30px));bottom:0;width:46%;height:220px;opacity:.21;pointer-events:none;z-index:0}
     .accent-strokes {position:absolute;left:82%;bottom:40px;width:133px;height:59px;pointer-events:none}
     .hero-art {position:relative;height:460px;min-width:0;margin-right:-34px;z-index:2}
@@ -80,7 +80,7 @@
     .feature-pill {display:flex;align-items:center;gap:10px;width:172px;border-radius:7px;padding:10px 13px;background:linear-gradient(105deg,#383c42,#30343b);box-shadow:0 12px 22px rgba(0,0,0,.26);border:1px solid rgba(255,255,255,.06);color:#f0f1f1;font-weight:750;font-size:11px;line-height:1.25;pointer-events:none;user-select:none}
     .feature-pill svg {width:21px;height:21px;flex:none;stroke:#d8dce1}
     .hero-art.orbit-ready .feature-stack {inset:0;display:block;z-index:auto}
-    .hero-art.orbit-ready .feature-pill {position:absolute;top:0;left:0;will-change:transform,opacity;backface-visibility:hidden;border-color:rgba(0,200,212,.2);z-index:5}
+    .hero-art.orbit-ready .feature-pill {position:absolute;top:0;left:0;will-change:transform,opacity;backface-visibility:hidden;border-color:rgba(255,255,255,.13);z-index:5}
     .hero-art.orbit-ready .orange-art {z-index:4}
     .hero-art.orbit-ready .dot-grid {z-index:1}
     .hero-art.orbit-ready .feature-pill svg {stroke:#e1e8e9}
@@ -91,28 +91,28 @@
 
     .section {padding:88px 0}
     .section-top {display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:31px}
-    .section-tag {color:var(--teal);font-size:10px;letter-spacing:.21em;text-transform:uppercase;font-weight:850;margin:0 0 13px}
+    .section-tag {color:#ecae8b;font-size:10px;letter-spacing:.21em;text-transform:uppercase;font-weight:850;margin:0 0 13px}
     .section-heading {font-size:clamp(2rem,3.6vw,3rem);line-height:1.17;letter-spacing:-.045em;font-weight:750;max-width:590px;margin:0}
     .section-description {font-size:13px;color:#aeb3b9;line-height:1.8;max-width:350px;margin:0}
     .services {border-top:1px solid var(--line);background:#202327}
     .services-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
     .service-card {position:relative;display:flex;flex-direction:column;min-height:255px;padding:27px 27px 23px;background:#2a2e34;border:1px solid #3b4047;border-radius:8px;transition:transform .24s,border-color .24s,background .24s;overflow:hidden}
     .service-card::before {content:"";position:absolute;right:-45px;top:-70px;border:1px solid rgba(255,255,255,.06);width:170px;height:170px;border-radius:50%;pointer-events:none}
-    .service-card:hover {transform:translateY(-4px);border-color:rgba(0,203,217,.54);background:#30343b}
+    .service-card:hover {transform:translateY(-4px);border-color:rgba(239,130,72,.54);background:#30343b}
     .service-head {display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
-    .service-symbol {display:grid;place-items:center;width:43px;height:43px;border-radius:7px;background:rgba(0,194,205,.1);border:1px solid rgba(0,194,205,.18);color:var(--teal)}
+    .service-symbol {display:grid;place-items:center;width:43px;height:43px;border-radius:7px;background:rgba(0,194,205,.1);border:1px solid rgba(0,194,205,.18);color:var(--accent)}
     .service-symbol svg {width:22px;height:22px}
     .service-count {font-size:11px;color:#888e95;letter-spacing:.14em;font-weight:800}
     .service-card h3 {font-size:18px;font-weight:760;letter-spacing:-.02em;margin:0 0 8px;line-height:1.3}
     .service-card p {font-size:12px;color:#b3b8be;line-height:1.74;flex:1;margin:0 0 17px}
-    .service-card a {align-self:start;display:inline-flex;align-items:center;gap:8px;font-weight:760;font-size:11px;color:var(--teal);padding:6px 0}
-    .service-card a:hover {color:#94ffff}
+    .service-card a {align-self:start;display:inline-flex;align-items:center;gap:8px;font-weight:760;font-size:11px;color:var(--accent);padding:6px 0}
+    .service-card a:hover {color:#ffd0ad}
     .service-card a svg {width:14px;height:14px}
     .section-dark {background:var(--bg-deep);border-block:1px solid var(--line)}
     .process-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:35px}
     .process-step {position:relative;border-top:1px solid #5a616b;padding-top:22px}
-    .process-step::before {content:"";position:absolute;width:31px;height:2px;background:var(--teal);top:-1px;left:0}
-    .process-step .num {font-size:11px;letter-spacing:.18em;font-weight:850;color:var(--teal)}
+    .process-step::before {content:"";position:absolute;width:31px;height:2px;background:var(--accent);top:-1px;left:0}
+    .process-step .num {font-size:11px;letter-spacing:.18em;font-weight:850;color:var(--accent)}
     .process-step h3 {font-size:18px;line-height:1.3;margin:14px 0 8px}
     .process-step p {margin:0;font-size:12px;color:#aab0b7;max-width:300px;line-height:1.8}
     .faq-wrap {display:grid;grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}
@@ -121,7 +121,7 @@
     .faq-list details {border-bottom:1px solid var(--line)}
     .faq-list summary {list-style:none;display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;padding:22px 2px;font-weight:760;font-size:14px}
     .faq-list summary::-webkit-details-marker {display:none}
-    .faq-list summary::after {content:"+";font-size:23px;line-height:1;color:var(--teal);font-weight:400}
+    .faq-list summary::after {content:"+";font-size:23px;line-height:1;color:var(--accent);font-weight:400}
     .faq-list details[open] summary::after {content:"−"}
     .faq-list .answer {color:#b1b6be;font-size:12px;line-height:1.85;padding:0 38px 23px 2px}
     .faq-list .answer p {margin:0}
@@ -131,21 +131,21 @@
     .contact-box>div,.contact-box>form {position:relative;z-index:1}
     .contact-box h2 {font-size:clamp(2rem,3.5vw,3rem);line-height:1.1;letter-spacing:-.04em;font-weight:750;margin:0 0 18px}
     .contact-copy p:not(.section-tag) {max-width:345px;color:#b8bdc3;font-size:13px;line-height:1.8;margin-bottom:26px}
-    .contact-direct {font-size:12px;color:var(--teal);font-weight:800;border-bottom:1px solid rgba(0,200,212,.45);padding-bottom:5px}
+    .contact-direct {font-size:12px;color:var(--accent);font-weight:800;border-bottom:1px solid rgba(239,130,72,.45);padding-bottom:5px}
     .quote-form {background:#24282e;border:1px solid #41474e;border-radius:8px;padding:25px}
     .field {margin-bottom:18px}.field label {display:block;margin:0 0 7px;font-size:12px;font-weight:760;color:#eceded}
     .field select,.field textarea {display:block;width:100%;border-radius:5px;border:1px solid #50565e;background:#30353b;color:#f2f5f5;padding:12px 13px;outline:0;font-size:13px}
     .field select {appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23d8e4e5' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:42px}
     .field textarea {min-height:105px;resize:vertical}
     .field textarea::placeholder {color:#a8afb6}
-    .field select:focus,.field textarea:focus {border-color:var(--teal);box-shadow:0 0 0 3px rgba(0,200,212,.12)}
+    .field select:focus,.field textarea:focus {border-color:var(--accent);box-shadow:0 0 0 3px rgba(239,130,72,.12)}
     .quote-form .btn-primary {width:100%;border:0}
     .form-note {font-size:11px;color:#989fa6;line-height:1.7;text-align:center;margin:12px 0 0}
     footer {border-top:1px solid var(--line);background:#1c1f23;padding:23px 0 27px}
     .footer-row {display:flex;align-items:center;justify-content:space-between;gap:20px}
     .footer-row p {font-size:11px;color:#979ca3;margin:0}
     .footer-row a {color:#c7cbce;font-size:12px}
-    .footer-row a:hover {color:var(--teal)}
+    .footer-row a:hover {color:var(--accent)}
     .mobile-whatsapp {display:none}
     @media (max-width:1110px) {
       .container{width:min(1100px,calc(100% - 54px))}
@@ -155,7 +155,7 @@
     }
     @media (max-width:870px) {
       .header-row{height:82px}.nav{display:none}.mobile-nav{display:flex;gap:23px;justify-content:flex-start;align-items:center;overflow:auto;white-space:nowrap;scrollbar-width:none;border-top:1px solid var(--line);height:42px}
-      .mobile-nav a{font-size:12px;font-weight:650;color:#c3c8cf}.mobile-nav a:hover{color:var(--teal)}
+      .mobile-nav a{font-size:12px;font-weight:650;color:#c3c8cf}.mobile-nav a:hover{color:var(--accent)}
       .hero-layout{grid-template-columns:1fr;gap:12px;padding:65px 0 70px}.hero-copy{max-width:680px}.hero-art{margin:0 auto;transform:none;width:min(100%,550px);height:425px}
       .circuit{width:100%;height:160px}.hero-shell{min-height:0}
       h1{max-width:650px;font-size:clamp(3rem,7.3vw,4.3rem)}
@@ -185,7 +185,7 @@
       .faq-list summary{font-size:13px;padding:20px 0}
       .contact{padding-bottom:60px}.contact-box{padding:24px 17px;gap:22px}.contact-box h2{font-size:2.3rem}.quote-form{padding:20px 17px}
       footer{padding-bottom:93px}.footer-row{flex-direction:column;align-items:flex-start;gap:11px}
-      .mobile-whatsapp{position:fixed;z-index:30;display:flex;justify-content:center;gap:9px;align-items:center;bottom:12px;left:12px;right:12px;min-height:50px;border:1px solid rgba(33,246,242,.35);border-radius:5px;background:linear-gradient(180deg,#0ad0d9,#0796a3);color:#061b22;box-shadow:0 10px 32px rgba(0,0,0,.4);font-weight:850;font-size:13px}
+      .mobile-whatsapp{position:fixed;z-index:30;display:flex;justify-content:center;gap:9px;align-items:center;bottom:12px;left:12px;right:12px;min-height:50px;border:1px solid rgba(255,166,108,.35);border-radius:5px;background:linear-gradient(180deg,#ff995c,#ea723a);color:#261508;box-shadow:0 10px 32px rgba(0,0,0,.4);font-weight:850;font-size:13px}
       .mobile-whatsapp svg{height:18px;width:18px}
     }
     @media (prefers-reduced-motion:reduce) {html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}.hero-art.orbit-ready .feature-stack{inset:auto;right:-3px;top:155px;display:grid;z-index:4}.hero-art.orbit-ready .feature-pill{position:static;transform:none!important;opacity:1!important;filter:none!important;animation:none!important;will-change:auto!important;background:#30343b!important;border-color:rgba(255,255,255,.04)!important}.orange-art{transform:none!important}}
@@ -201,7 +201,7 @@
       </nav>
       <div class="header-actions">
         <div class="lang" role="group" aria-label="Idioma / Language"><button type="button" data-lang="es" aria-pressed="true">ES</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
-        <a href="#contacto" class="header-cta"><span data-i18n="nav_cta">Cotizar proyecto</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+        <a href="#contacto" class="header-cta"><span data-i18n="nav_cta">Consultar</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
       </div>
     </div>
     <nav class="container mobile-nav" aria-label="Navegación móvil"><a href="#servicios" data-i18n="nav_services">Servicios</a><a href="#proceso" data-i18n="nav_process">Cómo funciona</a><a href="#preguntas" data-i18n="nav_faq">Preguntas</a><a href="#contacto" data-i18n="nav_contact">Contacto</a></nav>
@@ -214,15 +214,15 @@
       </svg>
       <div class="container hero-layout">
         <div class="hero-copy">
-          <div class="hero-overline"><span class="line"></span><span data-i18n="hero_kicker">DESARROLLO · AUTOMATIZACIÓN · CONTENIDO</span></div>
-          <h1 id="hero-title"><span data-i18n="hero_a">Soluciones </span><span class="accent" data-i18n="hero_b">digitales </span><span data-i18n="hero_c">para hacer tus ideas realidad.</span></h1>
-          <p class="hero-description" data-i18n="hero_desc">Desarrollo web, programación, automatizaciones y contenido digital. Soluciones prácticas para personas, proyectos y negocios.</p>
+          <div class="hero-overline"><span class="line"></span><span data-i18n="hero_kicker">WEB · CÓDIGO · AUTOMATIZACIÓN · DOCUMENTOS</span></div>
+          <h1 id="hero-title"><span data-i18n="hero_a">¿Necesitás </span><span class="accent" data-i18n="hero_b">ayuda </span><span data-i18n="hero_c">con algo digital?</span></h1>
+          <p class="hero-description" data-i18n="hero_desc">Puede ser una página web, un programa que falla, un Excel complicado o una idea personal. Contanos qué necesitás y vemos cómo resolverlo.</p>
           <div class="hero-actions">
-            <a class="btn-primary direct-wa" href="https://wa.me/50688728562" target="_blank" rel="noopener noreferrer"><span data-i18n="hero_cta">Hablemos de tu proyecto</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" aria-hidden="true"><path d="M5 19 19 5M7 5h12v12"/></svg></a>
-            <a class="btn-secondary" href="#servicios"><span data-i18n="hero_other">Ver servicios</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.0" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+            <a class="btn-primary direct-wa" href="https://wa.me/50688728562" target="_blank" rel="noopener noreferrer"><span data-i18n="hero_cta">Contanos qué necesitás</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" aria-hidden="true"><path d="M5 19 19 5M7 5h12v12"/></svg></a>
+            <a class="btn-secondary" href="#servicios"><span data-i18n="hero_other">Ver opciones</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.0" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
           </div>
-          <p class="hero-fine" data-i18n="hero_fine">Proyectos grandes o pequeños. <b>Alcance y precio acordados antes de empezar.</b></p>
-          <svg class="accent-strokes" viewBox="0 0 155 70" fill="none" aria-hidden="true"><path d="M9 39c36-14 67-20 125-29M23 51C63 38 106 31 148 29" stroke="#00cbd4" stroke-width="6" stroke-linecap="round" opacity=".89"/><path d="M27 58c22-9 61-17 108-20" stroke="#00cbd4" stroke-width="2" stroke-linecap="round" opacity=".62"/></svg>
+          <p class="hero-fine" data-i18n="hero_fine">Desde una corrección puntual hasta un proyecto completo. Precio acordado antes de empezar.</p>
+          <svg class="accent-strokes" viewBox="0 0 155 70" fill="none" aria-hidden="true"><path d="M9 39c36-14 67-20 125-29M23 51C63 38 106 31 148 29" stroke="#f08347" stroke-width="6" stroke-linecap="round" opacity=".89"/><path d="M27 58c22-9 61-17 108-20" stroke="#f08347" stroke-width="2" stroke-linecap="round" opacity=".62"/></svg>
         </div>
         <div class="hero-art" role="img" aria-label="Ilustración animada: servicios orbitando alrededor de una esfera naranja">
           <div class="art-panel">
@@ -231,57 +231,57 @@
             <div class="dot-grid"></div>
           </div>
           <div class="feature-stack" aria-hidden="true">
-            <div class="feature-pill"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5m8-10 5 5-5 5M14 4l-4 16"/></svg><span data-i18n="float_feature1">Programación</span></div>
+            <div class="feature-pill"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5m8-10 5 5-5 5M14 4l-4 16"/></svg><span data-i18n="float_feature1">Código y soluciones</span></div>
             <div class="feature-pill"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="15" rx="2"/><path d="M3 9h18m-12 5h4m4 0h1"/></svg><span data-i18n="float_feature2">Web y diseño</span></div>
-            <div class="feature-pill"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><path d="M13 17h8m-4-4v8"/></svg><span data-i18n="float_feature3">Proyectos a medida</span></div>
+            <div class="feature-pill"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><path d="M13 17h8m-4-4v8"/></svg><span data-i18n="float_feature3">Ideas a medida</span></div>
           </div>
         </div>
       </div>
     </section>
     <section class="services section" id="servicios">
       <div class="container">
-        <div class="section-top"><div><p class="section-tag" data-i18n="services_kicker">LO QUE HACEMOS</p><h2 class="section-heading" data-i18n="services_title">Soluciones para necesidades reales.</h2></div><p class="section-description" data-i18n="services_intro">Selecciona el servicio que mejor se ajuste a tu proyecto. Si no aparece aquí, también puedes consultarnos.</p></div>
+        <div class="section-top"><div><p class="section-tag" data-i18n="services_kicker">LO QUE HACEMOS</p><h2 class="section-heading" data-i18n="services_title">No tiene que ser un gran proyecto.</h2></div><p class="section-description" data-i18n="services_intro">Estos son algunos ejemplos. Si lo tuyo no encaja en una categoría, igual podés preguntar.</p></div>
         <div class="services-grid">
-          <article class="service-card"><div class="service-head"><span class="service-symbol"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20m-12 5-2 2 2 2m4-4 2 2-2 2"/></svg></span><span class="service-count">01</span></div><h3 data-i18n="s_web">Desarrollo web</h3><p data-i18n="d_web">Páginas para negocios, landing pages, interfaces y mejoras en sitios existentes.</p><a class="direct-wa" data-service="web" href="https://wa.me/50688728562"><span data-i18n="ask_service">Consultar servicio</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></article>
-          <article class="service-card"><div class="service-head"><span class="service-symbol"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m8 8-4 4 4 4m8-8 4 4-4 4M14 4l-4 16"/></svg></span><span class="service-count">02</span></div><h3 data-i18n="s_code">Programación y correcciones</h3><p data-i18n="d_code">Scripts, funciones, solución de errores y ajustes a herramientas existentes.</p><a class="direct-wa" data-service="code" href="https://wa.me/50688728562"><span data-i18n="ask_service">Consultar servicio</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></article>
-          <article class="service-card"><div class="service-head"><span class="service-symbol"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48 2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48 2.83-2.83"/><circle cx="12" cy="12" r="4"/></svg></span><span class="service-count">03</span></div><h3 data-i18n="s_auto">Automatización</h3><p data-i18n="d_auto">Procesos repetitivos, archivos y flujos de trabajo convertidos en tareas más simples.</p><a class="direct-wa" data-service="auto" href="https://wa.me/50688728562"><span data-i18n="ask_service">Consultar servicio</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></article>
-          <article class="service-card"><div class="service-head"><span class="service-symbol"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 9h16M9 9v12M14 9v12M4 15h16"/></svg></span><span class="service-count">04</span></div><h3 data-i18n="s_data">Hojas de cálculo y datos</h3><p data-i18n="d_data">Excel, fórmulas, reportes y organización de información para hacerla más útil.</p><a class="direct-wa" data-service="data" href="https://wa.me/50688728562"><span data-i18n="ask_service">Consultar servicio</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></article>
-          <article class="service-card"><div class="service-head"><span class="service-symbol"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg></span><span class="service-count">05</span></div><h3 data-i18n="s_docs">Documentos y presentaciones</h3><p data-i18n="d_docs">Redacción, informes, diapositivas, formato y documentación técnica o académica.</p><a class="direct-wa" data-service="docs" href="https://wa.me/50688728562"><span data-i18n="ask_service">Consultar servicio</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></article>
-          <article class="service-card"><div class="service-head"><span class="service-symbol"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8m0-12.8L5.6 18.4"/><circle cx="12" cy="12" r="3"/></svg></span><span class="service-count">06</span></div><h3 data-i18n="s_custom">Proyectos a medida</h3><p data-i18n="d_custom">¿Algo diferente? Cuéntanos tu objetivo y revisamos cómo podemos ayudarte.</p><a class="direct-wa" data-service="custom" href="https://wa.me/50688728562"><span data-i18n="ask_service">Consultar servicio</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></article>
+          <article class="service-card"><div class="service-head"><span class="service-symbol"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20m-12 5-2 2 2 2m4-4 2 2-2 2"/></svg></span><span class="service-count">01</span></div><h3 data-i18n="s_web">Páginas web</h3><p data-i18n="d_web">Sitios personales, portafolios, páginas para emprendimientos y mejoras a una web existente.</p><a class="direct-wa" data-service="web" href="https://wa.me/50688728562"><span data-i18n="ask_service">Consultar</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></article>
+          <article class="service-card"><div class="service-head"><span class="service-symbol"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m8 8-4 4 4 4m8-8 4 4-4 4M14 4l-4 16"/></svg></span><span class="service-count">02</span></div><h3 data-i18n="s_code">Programación y arreglos</h3><p data-i18n="d_code">Scripts, programas que fallan, funciones nuevas y herramientas que necesitan ajustes.</p><a class="direct-wa" data-service="code" href="https://wa.me/50688728562"><span data-i18n="ask_service">Consultar servicio</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></article>
+          <article class="service-card"><div class="service-head"><span class="service-symbol"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48 2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48 2.83-2.83"/><circle cx="12" cy="12" r="4"/></svg></span><span class="service-count">03</span></div><h3 data-i18n="s_auto">Automatizar tareas</h3><p data-i18n="d_auto">Procesos repetitivos, archivos y cosas que preferirías no hacer a mano.</p><a class="direct-wa" data-service="auto" href="https://wa.me/50688728562"><span data-i18n="ask_service">Consultar servicio</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></article>
+          <article class="service-card"><div class="service-head"><span class="service-symbol"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 9h16M9 9v12M14 9v12M4 15h16"/></svg></span><span class="service-count">04</span></div><h3 data-i18n="s_data">Excel y datos</h3><p data-i18n="d_data">Fórmulas, hojas de cálculo, reportes y organización de información.</p><a class="direct-wa" data-service="data" href="https://wa.me/50688728562"><span data-i18n="ask_service">Consultar servicio</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></article>
+          <article class="service-card"><div class="service-head"><span class="service-symbol"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg></span><span class="service-count">05</span></div><h3 data-i18n="s_docs">Documentos y presentaciones</h3><p data-i18n="d_docs">Informes, diapositivas, formatos, resúmenes y documentación técnica o académica.</p><a class="direct-wa" data-service="docs" href="https://wa.me/50688728562"><span data-i18n="ask_service">Consultar servicio</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></article>
+          <article class="service-card"><div class="service-head"><span class="service-symbol"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8m0-12.8L5.6 18.4"/><circle cx="12" cy="12" r="3"/></svg></span><span class="service-count">06</span></div><h3 data-i18n="s_custom">Ideas y proyectos propios</h3><p data-i18n="d_custom">¿Tenés una idea rara o muy específica? Contanos qué querés hacer y revisamos si es viable.</p><a class="direct-wa" data-service="custom" href="https://wa.me/50688728562"><span data-i18n="ask_service">Consultar servicio</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></article>
         </div>
       </div>
     </section>
-    <section class="section section-dark" id="proceso"><div class="container"><p class="section-tag" data-i18n="process_kicker">CÓMO TRABAJAMOS</p><h2 class="section-heading" data-i18n="process_title">Un proceso claro, de principio a fin.</h2><div class="process-grid"><div class="process-step"><span class="num">01 /</span><h3 data-i18n="p1">Cuéntanos lo que necesitas</h3><p data-i18n="p1d">Describe tu idea o problema. Puedes compartir archivos y ejemplos por WhatsApp.</p></div><div class="process-step"><span class="num">02 /</span><h3 data-i18n="p2">Definimos el alcance</h3><p data-i18n="p2d">Revisamos si podemos ayudarte, los detalles y el precio antes de comenzar.</p></div><div class="process-step"><span class="num">03 /</span><h3 data-i18n="p3">Desarrollamos la solución</h3><p data-i18n="p3d">Trabajamos en lo acordado y coordinamos contigo la entrega.</p></div></div></div></section>
-    <section class="section" id="preguntas"><div class="container faq-wrap"><div class="faq-intro"><p class="section-tag" data-i18n="faq_kicker">PREGUNTAS FRECUENTES</p><h2 class="section-heading" data-i18n="faq_title">Lo esencial, sin rodeos.</h2><p data-i18n="faq_intro">Si tu consulta no está aquí, puedes escribir directamente.</p></div><div class="faq-list"><details><summary data-i18n="q1">¿Cuánto cuesta un proyecto?</summary><div class="answer"><p data-i18n="a1">Depende de su alcance, complejidad y plazo. Confirmamos las condiciones y el precio antes de empezar.</p></div></details><details><summary data-i18n="q2">¿Aceptan trabajos pequeños?</summary><div class="answer"><p data-i18n="a2">Sí. Puedes consultar tanto por una corrección puntual como por un proyecto más amplio.</p></div></details><details><summary data-i18n="q3">¿Qué herramientas utilizan?</summary><div class="answer"><p data-i18n="a3">Según el encargo, trabajamos con tecnologías como Python, Java, JavaScript, HTML, CSS, PowerShell, Excel y SQL. Confirmamos la viabilidad antes de aceptar cada trabajo. No ofrecemos trabajos de Cisco.</p></div></details><details><summary data-i18n="q4">¿Qué pasa si mi idea no está en la lista?</summary><div class="answer"><p data-i18n="a4">Puedes describírnosla. La revisamos y te indicamos si podemos ayudar.</p></div></details></div></div></section>
-    <section class="contact" id="contacto"><div class="container"><div class="contact-box"><div class="contact-copy"><p class="section-tag" data-i18n="contact_kicker">HABLEMOS DE TU PROYECTO</p><h2 data-i18n="contact_title">¿Tienes algo en mente?</h2><p data-i18n="contact_intro">No tienes que tenerlo todo definido. Cuéntanos lo que buscas y revisamos cómo podemos ayudarte.</p><a class="contact-direct direct-wa" href="https://wa.me/50688728562" target="_blank" rel="noopener noreferrer" data-i18n="contact_direct">Prefiero escribir directamente ↗</a></div><form class="quote-form" id="quote-form"><div class="field"><label for="service" data-i18n="field_service">¿Qué tipo de proyecto es?</label><select id="service" name="service"><option value="web" data-i18n="s_web">Desarrollo web</option><option value="code" data-i18n="s_code">Programación y correcciones</option><option value="auto" data-i18n="s_auto">Automatización</option><option value="data" data-i18n="s_data">Hojas de cálculo y datos</option><option value="docs" data-i18n="s_docs">Documentos y presentaciones</option><option value="custom" data-i18n="s_custom">Proyectos a medida</option></select></div><div class="field"><label for="description" data-i18n="field_desc">Cuéntanos brevemente qué necesitas</label><textarea id="description" name="description" required maxlength="1500" data-i18n-placeholder="field_example" placeholder="Ej.: necesito una página web sencilla para mi negocio..."></textarea></div><button class="btn-primary" type="submit"><span data-i18n="form_cta">Continuar por WhatsApp</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button><p class="form-note" data-i18n="form_note">Se abre WhatsApp con un mensaje preparado. Tú decides si lo envías.</p></form></div></div></section>
+    <section class="section section-dark" id="proceso"><div class="container"><p class="section-tag" data-i18n="process_kicker">CÓMO TRABAJAMOS</p><h2 class="section-heading" data-i18n="process_title">Así de sencillo funciona.</h2><div class="process-grid"><div class="process-step"><span class="num">01 /</span><h3 data-i18n="p1">Contanos qué necesitás</h3><p data-i18n="p1d">No hace falta tenerlo definido en términos técnicos. Un ejemplo, un archivo o una explicación bastan para empezar.</p></div><div class="process-step"><span class="num">02 /</span><h3 data-i18n="p2">Vemos qué se puede hacer</h3><p data-i18n="p2d">Revisamos los detalles, el plazo y el precio. Todo se acuerda antes de comenzar.</p></div><div class="process-step"><span class="num">03 /</span><h3 data-i18n="p3">Nos ponemos con ello</h3><p data-i18n="p3d">Trabajamos en lo acordado y coordinamos la entrega con vos.</p></div></div></div></section>
+    <section class="section" id="preguntas"><div class="container faq-wrap"><div class="faq-intro"><p class="section-tag" data-i18n="faq_kicker">PREGUNTAS FRECUENTES</p><h2 class="section-heading" data-i18n="faq_title">Preguntas frecuentes.</h2><p data-i18n="faq_intro">Podés escribir incluso si solo querés saber si una idea es posible.</p></div><div class="faq-list"><details><summary data-i18n="q1">¿Cuánto cuesta un proyecto?</summary><div class="answer"><p data-i18n="a1">Sí. Una corrección puntual, un archivo, una consulta o un proyecto más grande. Cada caso se revisa por separado.</p></div></details><details><summary data-i18n="q2">¿Aceptan trabajos pequeños?</summary><div class="answer"><p data-i18n="a2">Depende de la dificultad y el tiempo requerido. Acordamos el precio antes de empezar.</p></div></details><details><summary data-i18n="q3">¿Qué herramientas utilizan?</summary><div class="answer"><p data-i18n="a3">Según el caso: Python, Java, JavaScript, HTML, CSS, PowerShell, Excel, SQL y otras herramientas. Consultanos primero para confirmar si podemos hacerlo. No ofrecemos trabajos de Cisco o redes.</p></div></details><details><summary data-i18n="q4">¿Qué pasa si mi idea no está en la lista?</summary><div class="answer"><p data-i18n="a4">Simplemente contanos el problema o tu idea. Te decimos si podemos ayudarte.</p></div></details></div></div></section>
+    <section class="contact" id="contacto"><div class="container"><div class="contact-box"><div class="contact-copy"><p class="section-tag" data-i18n="contact_kicker">¿TE PODEMOS AYUDAR?</p><h2 data-i18n="contact_title">Contanos qué necesitás.</h2><p data-i18n="contact_intro">Puede ser una duda, un error, una tarea tediosa o algo que te gustaría crear. No tenés que conocer los términos técnicos.</p><a class="contact-direct direct-wa" href="https://wa.me/50688728562" target="_blank" rel="noopener noreferrer" data-i18n="contact_direct">Prefiero escribir directamente ↗</a></div><form class="quote-form" id="quote-form"><div class="field"><label for="service" data-i18n="field_service">¿Con qué necesitás ayuda?</label><select id="service" name="service"><option value="web" data-i18n="s_web">Desarrollo web</option><option value="code" data-i18n="s_code">Programación y correcciones</option><option value="auto" data-i18n="s_auto">Automatización</option><option value="data" data-i18n="s_data">Hojas de cálculo y datos</option><option value="docs" data-i18n="s_docs">Documentos y presentaciones</option><option value="custom" data-i18n="s_custom">Proyectos a medida</option></select></div><div class="field"><label for="description" data-i18n="field_desc">Explicanos tu idea o problema</label><textarea id="description" name="description" required maxlength="1500" data-i18n-placeholder="field_example" placeholder="Ej.: tengo una hoja de Excel que quiero automatizar..."></textarea></div><button class="btn-primary" type="submit"><span data-i18n="form_cta">Consultar por WhatsApp</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button><p class="form-note" data-i18n="form_note">Se abrirá WhatsApp con un mensaje preparado. Vos decidís si enviarlo.</p></form></div></div></section>
   </main>
-  <footer><div class="container footer-row"><p data-i18n="footer">Servicios Digitales · Soluciones a medida</p><a class="direct-wa" href="https://wa.me/50688728562" target="_blank" rel="noopener noreferrer" data-i18n="footer_link">Contactar por WhatsApp</a></div></footer>
+  <footer><div class="container footer-row"><p data-i18n="footer">Servicios Digitales · Soluciones para tus ideas</p><a class="direct-wa" href="https://wa.me/50688728562" target="_blank" rel="noopener noreferrer" data-i18n="footer_link">Contactar por WhatsApp</a></div></footer>
   <a class="mobile-whatsapp direct-wa" href="https://wa.me/50688728562" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2A9.92 9.92 0 0 0 3.52 17.1L2 22l5.02-1.48A10 10 0 1 0 12.04 2Zm0 18.08a8.1 8.1 0 0 1-4.1-1.12l-.29-.17-2.98.88.91-2.9-.19-.31a8.08 8.08 0 1 1 6.65 3.62Zm4.47-6.05c-.25-.13-1.47-.72-1.7-.8-.23-.09-.39-.13-.56.12-.17.25-.64.8-.79.97-.14.17-.29.19-.54.06a6.58 6.58 0 0 1-3.25-2.84c-.24-.41.24-.39.69-1.29.08-.17.04-.31-.02-.44-.07-.12-.56-1.35-.76-1.85-.2-.48-.41-.41-.56-.42H8.5c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.07s.89 2.39 1.01 2.55a9.26 9.26 0 0 0 3.55 3.16c1.32.57 1.84.62 2.5.53.4-.06 1.47-.6 1.68-1.18.2-.58.2-1.08.14-1.18-.06-.11-.23-.17-.48-.3Z"/></svg><span data-i18n="mobile_cta">Consultar por WhatsApp</span></a>
   <script>
     (()=>{
       const NUMBER='50688728562';
       const translations={
         es:{
-          skip:'Ir al contenido',nav_services:'Servicios',nav_process:'Cómo funciona',nav_faq:'Preguntas',nav_contact:'Contacto',nav_cta:'Cotizar proyecto',
-          hero_kicker:'DESARROLLO · AUTOMATIZACIÓN · CONTENIDO',hero_a:'Soluciones ',hero_b:'digitales ',hero_c:'para hacer tus ideas realidad.',hero_desc:'Desarrollo web, programación, automatizaciones y contenido digital. Soluciones prácticas para personas, proyectos y negocios.',hero_cta:'Hablemos de tu proyecto',hero_other:'Ver servicios',hero_fine:'Proyectos grandes o pequeños. Alcance y precio acordados antes de empezar.',
-          float_feature1:'Programación',float_feature2:'Web y diseño',float_feature3:'Proyectos a medida',
-          services_kicker:'LO QUE HACEMOS',services_title:'Soluciones para necesidades reales.',services_intro:'Selecciona el servicio que mejor se ajuste a tu proyecto. Si no aparece aquí, también puedes consultarnos.',ask_service:'Consultar servicio',
-          s_web:'Desarrollo web',d_web:'Páginas para negocios, landing pages, interfaces y mejoras en sitios existentes.',s_code:'Programación y correcciones',d_code:'Scripts, funciones, solución de errores y ajustes a herramientas existentes.',s_auto:'Automatización',d_auto:'Procesos repetitivos, archivos y flujos de trabajo convertidos en tareas más simples.',s_data:'Hojas de cálculo y datos',d_data:'Excel, fórmulas, reportes y organización de información para hacerla más útil.',s_docs:'Documentos y presentaciones',d_docs:'Redacción, informes, diapositivas, formato y documentación técnica o académica.',s_custom:'Proyectos a medida',d_custom:'¿Algo diferente? Cuéntanos tu objetivo y revisamos cómo podemos ayudarte.',
-          process_kicker:'CÓMO TRABAJAMOS',process_title:'Un proceso claro, de principio a fin.',p1:'Cuéntanos lo que necesitas',p1d:'Describe tu idea o problema. Puedes compartir archivos y ejemplos por WhatsApp.',p2:'Definimos el alcance',p2d:'Revisamos si podemos ayudarte, los detalles y el precio antes de comenzar.',p3:'Desarrollamos la solución',p3d:'Trabajamos en lo acordado y coordinamos contigo la entrega.',
-          faq_kicker:'PREGUNTAS FRECUENTES',faq_title:'Lo esencial, sin rodeos.',faq_intro:'Si tu consulta no está aquí, puedes escribir directamente.',q1:'¿Cuánto cuesta un proyecto?',a1:'Depende de su alcance, complejidad y plazo. Confirmamos las condiciones y el precio antes de empezar.',q2:'¿Aceptan trabajos pequeños?',a2:'Sí. Puedes consultar tanto por una corrección puntual como por un proyecto más amplio.',q3:'¿Qué herramientas utilizan?',a3:'Según el encargo, trabajamos con tecnologías como Python, Java, JavaScript, HTML, CSS, PowerShell, Excel y SQL. Confirmamos la viabilidad antes de aceptar cada trabajo. No ofrecemos trabajos de Cisco.',q4:'¿Qué pasa si mi idea no está en la lista?',a4:'Puedes describírnosla. La revisamos y te indicamos si podemos ayudar.',
-          contact_kicker:'HABLEMOS DE TU PROYECTO',contact_title:'¿Tienes algo en mente?',contact_intro:'No tienes que tenerlo todo definido. Cuéntanos lo que buscas y revisamos cómo podemos ayudarte.',contact_direct:'Prefiero escribir directamente ↗',field_service:'¿Qué tipo de proyecto es?',field_desc:'Cuéntanos brevemente qué necesitas',field_example:'Ej.: necesito una página web sencilla para mi negocio...',form_cta:'Continuar por WhatsApp',form_note:'Se abre WhatsApp con un mensaje preparado. Tú decides si lo envías.',footer:'Servicios Digitales · Soluciones a medida',footer_link:'Contactar por WhatsApp',mobile_cta:'Consultar por WhatsApp',
-          msg_general:'Hola, vi su página y quisiera consultar sobre un proyecto.',msg_service:'Hola, vi su página y quisiera consultar sobre',msg_quote:'Hola, quisiera cotizar un proyecto.',msg_type:'Servicio',msg_desc:'Descripción'
+          skip:'Ir al contenido',nav_services:'Servicios',nav_process:'Cómo funciona',nav_faq:'Preguntas',nav_contact:'Contacto',nav_cta:'Consultar',
+          hero_kicker:'WEB · CÓDIGO · AUTOMATIZACIÓN · DOCUMENTOS',hero_a:'¿Necesitás ',hero_b:'ayuda ',hero_c:'con algo digital?',hero_desc:'Puede ser una página web, un programa que falla, un Excel complicado o una idea personal. Contanos qué necesitás y vemos cómo resolverlo.',hero_cta:'Contanos qué necesitás',hero_other:'Ver opciones',hero_fine:'Desde una corrección puntual hasta un proyecto completo. Precio acordado antes de empezar.',
+          float_feature1:'Código y soluciones',float_feature2:'Web y diseño',float_feature3:'Ideas a medida',
+          services_kicker:'LO QUE HACEMOS',services_title:'No tiene que ser un gran proyecto.',services_intro:'Estos son algunos ejemplos. Si lo tuyo no encaja en una categoría, igual podés preguntar.',ask_service:'Consultar',
+          s_web:'Páginas web',d_web:'Sitios personales, portafolios, páginas para emprendimientos y mejoras a una web existente.',s_code:'Programación y arreglos',d_code:'Scripts, programas que fallan, funciones nuevas y herramientas que necesitan ajustes.',s_auto:'Automatizar tareas',d_auto:'Procesos repetitivos, archivos y cosas que preferirías no hacer a mano.',s_data:'Excel y datos',d_data:'Fórmulas, hojas de cálculo, reportes y organización de información.',s_docs:'Documentos y presentaciones',d_docs:'Informes, diapositivas, formatos, resúmenes y documentación técnica o académica.',s_custom:'Ideas y proyectos propios',d_custom:'¿Tenés una idea rara o muy específica? Contanos qué querés hacer y revisamos si es viable.',
+          process_kicker:'CÓMO TRABAJAMOS',process_title:'Así de sencillo funciona.',p1:'Contanos qué necesitás',p1d:'No hace falta tenerlo definido en términos técnicos. Un ejemplo, un archivo o una explicación bastan para empezar.',p2:'Vemos qué se puede hacer',p2d:'Revisamos los detalles, el plazo y el precio. Todo se acuerda antes de comenzar.',p3:'Nos ponemos con ello',p3d:'Trabajamos en lo acordado y coordinamos la entrega con vos.',
+          faq_kicker:'PREGUNTAS FRECUENTES',faq_title:'Preguntas frecuentes.',faq_intro:'Podés escribir incluso si solo querés saber si una idea es posible.',q1:'¿Puedo pedir algo pequeño?',a1:'Sí. Una corrección puntual, un archivo, una consulta o un proyecto más grande. Cada caso se revisa por separado.',q2:'¿Cuánto cuesta?',a2:'Depende de la dificultad y el tiempo requerido. Acordamos el precio antes de empezar.',q3:'¿Qué herramientas utilizan?',a3:'Según el caso: Python, Java, JavaScript, HTML, CSS, PowerShell, Excel, SQL y otras herramientas. Consultanos primero para confirmar si podemos hacerlo. No ofrecemos trabajos de Cisco o redes.',q4:'¿Y si no sé qué servicio necesito?',a4:'Simplemente contanos el problema o tu idea. Te decimos si podemos ayudarte.',
+          contact_kicker:'¿TE PODEMOS AYUDAR?',contact_title:'Contanos qué necesitás.',contact_intro:'Puede ser una duda, un error, una tarea tediosa o algo que te gustaría crear. No tenés que conocer los términos técnicos.',contact_direct:'Prefiero escribir directamente ↗',field_service:'¿Con qué necesitás ayuda?',field_desc:'Explicanos tu idea o problema',field_example:'Ej.: tengo una hoja de Excel que quiero automatizar...',form_cta:'Consultar por WhatsApp',form_note:'Se abrirá WhatsApp con un mensaje preparado. Vos decidís si enviarlo.',footer:'Servicios Digitales · Soluciones para tus ideas',footer_link:'Contactar por WhatsApp',mobile_cta:'Consultar por WhatsApp',
+          msg_general:'Hola, vi tu página y quisiera consultar por una solución digital.',msg_service:'Hola, vi tu página y quisiera consultar sobre',msg_quote:'Hola, quisiera consultar si pueden ayudarme con esto.',msg_type:'Tipo de ayuda',msg_desc:'Lo que necesito'
         },
         en:{
-          skip:'Skip to content',nav_services:'Services',nav_process:'How it works',nav_faq:'FAQs',nav_contact:'Contact',nav_cta:'Get a quote',
-          hero_kicker:'DEVELOPMENT · AUTOMATION · CONTENT',hero_a:'Digital ',hero_b:'solutions ',hero_c:'to bring your ideas to life.',hero_desc:'Web development, programming, automation, and digital content. Practical solutions for people, projects, and businesses.',hero_cta:'Talk about your project',hero_other:'Explore services',hero_fine:'Projects big or small. Scope and pricing agreed before work begins.',
-          float_feature1:'Programming',float_feature2:'Web and design',float_feature3:'Custom projects',
-          services_kicker:'WHAT WE DO',services_title:'Solutions for real-world needs.',services_intro:'Choose the closest fit for your project. If it isn’t listed, you can still ask us.',ask_service:'Ask about this service',
-          s_web:'Web development',d_web:'Websites for businesses, landing pages, interfaces, and improvements to existing sites.',s_code:'Programming and fixes',d_code:'Scripts, functions, debugging, and changes to existing tools.',s_auto:'Automation',d_auto:'Make repetitive tasks, file handling, and everyday workflows simpler.',s_data:'Spreadsheets and data',d_data:'Excel, formulas, reports, and organized information you can actually use.',s_docs:'Documents and presentations',d_docs:'Writing, reports, slides, formatting, and technical or academic documentation.',s_custom:'Custom projects',d_custom:'Something different? Tell us your goal and we’ll see how we can help.',
-          process_kicker:'HOW WE WORK',process_title:'A clear process, start to finish.',p1:'Tell us what you need',p1d:'Describe your idea or problem. You can share files or examples on WhatsApp.',p2:'Define the scope',p2d:'We check feasibility, details, and pricing before work begins.',p3:'Build the solution',p3d:'We work on what we agreed and coordinate delivery with you.',
-          faq_kicker:'FREQUENTLY ASKED QUESTIONS',faq_title:'The essentials, no fluff.',faq_intro:'If your question isn’t answered here, you can message us directly.',q1:'How much does a project cost?',a1:'It depends on the scope, complexity, and deadline. We confirm the terms and price before getting started.',q2:'Do you take small jobs?',a2:'Yes. You can ask about a quick fix or a larger project.',q3:'Which tools do you use?',a3:'Depending on the job, we work with technologies including Python, Java, JavaScript, HTML, CSS, PowerShell, Excel, and SQL. We confirm feasibility before taking on a job. Cisco assignments are not offered.',q4:'What if my idea isn’t on the list?',a4:'Tell us about it. We’ll review it and let you know if we can help.',
-          contact_kicker:'LET’S TALK ABOUT YOUR PROJECT',contact_title:'Have something in mind?',contact_intro:'You don’t need to have everything figured out. Tell us what you’re looking for and we’ll see how we can help.',contact_direct:'I’d rather message directly ↗',field_service:'What type of project is it?',field_desc:'Briefly describe what you need',field_example:'E.g., I need a simple website for my business...',form_cta:'Continue to WhatsApp',form_note:'WhatsApp will open with a prepared message. You decide whether to send it.',footer:'Digital Services · Tailored solutions',footer_link:'Contact on WhatsApp',mobile_cta:'Ask on WhatsApp',
-          msg_general:'Hi, I saw your website and would like to ask about a project.',msg_service:'Hi, I saw your website and would like to ask about',msg_quote:'Hello, I would like a quote for a project.',msg_type:'Service',msg_desc:'Description'
+          skip:'Skip to content',nav_services:'Services',nav_process:'How it works',nav_faq:'FAQs',nav_contact:'Contact',nav_cta:'Ask about a job',
+          hero_kicker:'WEB · CODE · AUTOMATION · DOCUMENTS',hero_a:'Need ',hero_b:'a hand ',hero_c:'with something digital?',hero_desc:'Maybe it’s a website, broken code, a difficult spreadsheet, or a personal idea. Tell us what you need and we’ll see how to make it work.',hero_cta:'Tell us what you need',hero_other:'See options',hero_fine:'From one small fix to a complete project. Pricing agreed before work begins.',
+          float_feature1:'Code and fixes',float_feature2:'Web and design',float_feature3:'Custom ideas',
+          services_kicker:'WHAT WE DO',services_title:'It doesn’t have to be a big project.',services_intro:'Here are some examples. If your request doesn’t fit a category, feel free to ask anyway.',ask_service:'Ask about this',
+          s_web:'Websites',d_web:'Personal sites, portfolios, small-business pages, and changes to existing websites.',s_code:'Programming and fixes',d_code:'Scripts, broken programs, new features, and tools that need tweaking.',s_auto:'Automate tasks',d_auto:'Repetitive processes, files, and tasks you’d rather not do manually.',s_data:'Excel and data',d_data:'Formulas, spreadsheets, reports, and organizing information.',s_docs:'Documents and presentations',d_docs:'Reports, slides, formatting, summaries, and technical or academic documents.',s_custom:'Personal ideas and projects',d_custom:'Have a very specific or unusual idea? Tell us about it and we’ll check whether it’s feasible.',
+          process_kicker:'HOW WE WORK',process_title:'Here’s how it works.',p1:'Tell us what you need',p1d:'No technical jargon needed. A short explanation, example, or file is enough to start.',p2:'We check what’s possible',p2d:'We go over the details, timeframe, and price. Everything is agreed in advance.',p3:'We get to work',p3d:'We build what we agreed on and coordinate delivery with you.',
+          faq_kicker:'FREQUENTLY ASKED QUESTIONS',faq_title:'Frequently asked questions.',faq_intro:'You can reach out even if you just want to know whether an idea is possible.',q1:'Can I ask for something small?',a1:'Yes. A quick fix, a file, a question, or a bigger project. We review each request individually.',q2:'How much does it cost?',a2:'It depends on difficulty and time required. We agree on pricing before work begins.',q3:'Which tools do you use?',a3:'Depending on the request: Python, Java, JavaScript, HTML, CSS, PowerShell, Excel, SQL, and other tools. Ask first to confirm feasibility. We don’t offer Cisco or networking assignments.',q4:'What if I don’t know which service I need?',a4:'Just describe your idea or the problem. We’ll tell you if we can help.',
+          contact_kicker:'CAN WE HELP?',contact_title:'Tell us what you need.',contact_intro:'It could be a question, a bug, a tedious task, or something you’d like to create. No technical jargon required.',contact_direct:'I’d rather message directly ↗',field_service:'What do you need help with?',field_desc:'Describe your idea or problem',field_example:'E.g., I have an Excel spreadsheet I want to automate...',form_cta:'Ask on WhatsApp',form_note:'WhatsApp will open with a drafted message. You decide whether to send it.',footer:'Digital Services · Practical help for your ideas',footer_link:'Contact on WhatsApp',mobile_cta:'Ask on WhatsApp',
+          msg_general:'Hi, I saw your website and would like to ask about a digital task.',msg_service:'Hi, I saw your website and would like to ask about',msg_quote:'Hi, I would like to ask if you can help me with this.',msg_type:'Type of help',msg_desc:'What I need'
         }
       };
       let language='es';
@@ -300,8 +300,8 @@
         document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(t[k]!==undefined)el.textContent=t[k]});
         document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{const k=el.dataset.i18nPlaceholder;if(t[k]!==undefined)el.placeholder=t[k]});
         document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===language)));
-        document.querySelector('meta[name="description"]').content=language==='es'?'Servicios digitales a medida: desarrollo web, programación, automatización, documentos, hojas de cálculo y presentaciones. Cotiza por WhatsApp.':'Tailored digital services: web development, programming, automation, documents, spreadsheets, and presentations. Get a quote through WhatsApp.';
-        document.title=language==='es'?'Servicios Digitales — Soluciones a medida':'Digital Services — Tailored solutions';
+        document.querySelector('meta[name="description"]').content=language==='es'?'Ayuda digital para necesidades personales: páginas web, programación, automatización, Excel, documentos y proyectos a medida. Consulta por WhatsApp.':'Help with websites, programming, spreadsheets, automation, documents, and personal digital projects. Ask on WhatsApp.';
+        document.title=language==='es'?'Servicios Digitales — Para tus ideas':'Digital Services — Help for your ideas';
         document.querySelector('.hero-art').setAttribute('aria-label',language==='es'?'Ilustración animada: servicios orbitando alrededor de una esfera naranja':'Animated illustration: services orbiting an orange sphere');
         document.querySelector('.nav').setAttribute('aria-label',language==='es'?'Navegación principal':'Main navigation');
         document.querySelector('.mobile-nav').setAttribute('aria-label',language==='es'?'Navegación móvil':'Mobile navigation');
